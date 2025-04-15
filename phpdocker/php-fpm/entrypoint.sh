@@ -14,6 +14,7 @@ fi
 
 sed -i 's/^SESSION_DRIVER=.*/SESSION_DRIVER=file/' .env
 sed -i 's/^QUEUE_CONNECTION=.*/QUEUE_CONNECTION=sync/' .env
+sed -i 's/^CACHE_STORE=.*/CACHE_STORE=file/' .env
 
 composer install --no-interaction
 
