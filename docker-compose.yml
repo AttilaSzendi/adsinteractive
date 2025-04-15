@@ -1,0 +1,20 @@
+services:
+    webserver:
+        image: nginx:alpine
+        container_name: adsinteractive_webserver
+        working_dir: /application
+        volumes:
+            - './:/application'
+            - './phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf'
+        ports:
+            - '52000:80'
+
+    php-fpm:
+        build: ./phpdocker/php-fpm
+        container_name: adsinteractive_php
+        working_dir: /application
+        volumes:
+            - './:/application'
+        environment:
+            - "COMPOSER_ALLOW_SUPERUSER=1"
+            - "APP_ENV=local"
