@@ -10,6 +10,7 @@ chmod -R 775 storage bootstrap/cache
 
 if [ ! -f .env ]; then
     cp .env.example .env
+    chmod 666 .env
 fi
 
 sed -i 's/^SESSION_DRIVER=.*/SESSION_DRIVER=file/' .env
@@ -18,9 +19,9 @@ sed -i 's/^CACHE_STORE=.*/CACHE_STORE=file/' .env
 
 composer install --no-interaction
 
-php artisan config:clear || true
-php artisan key:generate || true
-php artisan view:clear || true
-php artisan route:clear || true
+php artisan config:clear
+php artisan key:generate
+php artisan view:clear
+php artisan route:clear
 
 exec "$@"

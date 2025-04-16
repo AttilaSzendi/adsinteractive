@@ -15,6 +15,3 @@ services:
         working_dir: /application
         volumes:
             - './:/application'
-        environment:
-            - "COMPOSER_ALLOW_SUPERUSER=1"
-            - "APP_ENV=local"
