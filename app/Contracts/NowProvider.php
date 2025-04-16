@@ -2,6 +2,7 @@
 
 namespace App\Contracts;
 
-interface NowProvider {
+interface NowProvider
+{
     public function get(): string;
 }

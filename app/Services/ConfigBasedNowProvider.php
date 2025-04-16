@@ -9,7 +9,6 @@ readonly class ConfigBasedNowProvider implements NowProvider
 {
     public function __construct(private ?string $fakeDatetime) {}
 
-
     public function get(): string
     {
         return $this->fakeDatetime
