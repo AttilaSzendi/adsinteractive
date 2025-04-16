@@ -16,3 +16,6 @@ konfigurációból származó előre beállított időpontot.
     ```bash
    docker compose up -d
    ```
+   ```bash
+   php artisan test
+   ```
